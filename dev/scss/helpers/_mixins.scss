@@ -2,11 +2,14 @@
 /* =============
     Mixins
 ============= */
-@use "sass:math";
+
 /* ---------------- Font Sizing ---------------- */
 // ----
 // rem mixins
 // ----
+
+@use "sass:math";
+
 $rem-base: 16px !default; // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
 @function rem-separator($list) {
     @if function-exists("list-separator")==true {
