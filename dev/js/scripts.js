@@ -22,4 +22,8 @@ const mainTL = gsap.timeline();
 
 mainTL.from("#title", {duration: 5, alpha:0})
 .from("#title", {duration:2, blur:8, ease: "none"});
+
+
+
+       
        
