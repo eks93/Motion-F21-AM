@@ -448,13 +448,13 @@ nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav 
     Header
 ============= */
 header {
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 50px;
-  position: fixed;
   border: 40px solid black;
   width: 100%;
   background-color: black;
   z-index: 1000;
+  position: fixed;
 }
 header > div {
   /*display: grid;
@@ -508,6 +508,7 @@ header > div ul {
 }
 #hero > div article {
   align-items: center;
+  background-color: black;
   background-image: url("../img/hero/hero.jpg");
   background-position: center;
   background-size: cover;
