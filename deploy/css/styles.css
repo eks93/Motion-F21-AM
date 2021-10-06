@@ -411,21 +411,34 @@ textarea {
 nav {
   height: 100%;
 }
+nav .logo:link, nav .logo:visited {
+  display: block;
+  color: white;
+  transition: 0.25s ease 0s;
+}
+nav .logo:link:hover, nav .logo:link:active, nav .logo:visited:hover, nav .logo:visited:active {
+  color: grey;
+}
 nav ul {
-  display: flex;
+  /*display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 100%;*/
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   height: 100%;
+  padding-top: 40px;
 }
 nav ul li {
-  margin-left: 4vw;
+  margin-left: 3vw;
 }
 nav ul li a:link, nav ul li a:visited {
   font-family: "Lato", sans-serif;
   font-size: 1.375rem;
   color: white;
   font-weight: 300;
-  transition: 0.25s;
+  transition: 0.25s ease 0s;
 }
 nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
   color: grey;
@@ -435,21 +448,33 @@ nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav 
     Header
 ============= */
 header {
-  padding-top: 120px;
-  padding-bottom: 105px;
+  padding-top: 100px;
+  padding-bottom: 50px;
   position: fixed;
-  border: 125px solid black;
+  border: 40px solid black;
   width: 100%;
   background-color: black;
   z-index: 1000;
 }
 header > div {
-  display: grid;
-  grid-template-columns: 15% auto;
-  padding: 8px 16px;
+  /*display: grid;
+  grid-template-columns: 10% auto;
+  padding: 10px 16px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 120px;
+  padding-left: 40px;
 }
 header > div aside a {
   display: inline-block;
+}
+header > div ul {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
 }
 
 /* =============
@@ -458,6 +483,7 @@ header > div aside a {
 #hero {
   height: 90vh;
   width: 100%;
+  background-color: black;
 }
 @media (min-width: 1440px) {
   #hero {
@@ -468,8 +494,12 @@ header > div aside a {
 }
 #hero > div {
   overflow: hidden !important;
-  border: 105px solid black;
+  border-top: 100px solid black;
+  border-left: 100px solid black;
+  border-right: 100px solid black;
+  border-bottom: 200px solid black;
   height: 100%;
+  padding-top: 200px;
 }
 @media (min-width: 1440px) {
   #hero > div {
@@ -482,46 +512,42 @@ header > div aside a {
   background-position: center;
   background-size: cover;
   display: flex;
-  height: 100%;
+  height: 80%;
   justify-content: center;
 }
 #hero > div article section {
   color: #fff;
   text-align: center;
+  /*h1 {
+      font-size: rem-calc(80);
+      font-weight: 900;
+      line-height: 117px;
+      text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+
+      @include md {
+          font-size: rem-calc(90);
+      }
+
+      @include lg {
+          font-size: rem-calc(100);
+      }
+  }*/
 }
 #hero > div article section h1 {
-  font-size: 5rem;
-  font-weight: 900;
-  line-height: 117px;
-  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 40px;
 }
 @media (min-width: 768px) {
   #hero > div article section h1 {
-    font-size: 5.625rem;
+    font-size: 50px;
   }
 }
 @media (min-width: 1024px) {
   #hero > div article section h1 {
-    font-size: 6.25rem;
-  }
-}
-#hero > div article section h2 {
-  font-size: 1.875rem;
-  font-weight: 400;
-  line-height: 47px;
-  margin-top: -25px;
-  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
-}
-@media (min-width: 768px) {
-  #hero > div article section h2 {
-    font-size: 2.5rem;
-    margin-top: -20px;
-  }
-}
-@media (min-width: 1024px) {
-  #hero > div article section h2 {
-    font-size: 3.125rem;
-    margin-top: -15px;
+    font-size: 60px;
   }
 }
 
@@ -530,6 +556,7 @@ header > div aside a {
   grid-template-areas: ". content .";
   grid-template-columns: auto 90% auto;
   padding: 64px 0;
+  background-color: black;
 }
 @media (min-width: 768px) {
   #content {
@@ -550,18 +577,35 @@ header > div aside a {
 }
 #content > div {
   grid-area: content;
+  margin-top: 150px;
+  margin-bottom: 250px;
 }
 @media (min-width: 1024px) {
   #content > div {
-    padding: 0 30%;
+    padding: 0 20%;
   }
 }
-#content > div h1 {
-  font-size: 2.1875rem;
-  margin-bottom: 10px;
+#content > div h2 {
+  /*font-size: rem-calc(35);
+  margin-bottom: 10px;*/
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: white;
+  text-align: center;
+  margin-bottom: 35px;
 }
 #content > div p {
-  font-size: 1.125rem;
-  line-height: 1.875rem;
-  text-align: justify;
+  /*font-size: rem-calc(18);
+  line-height: rem-calc(30);
+  text-align: justify;*/
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: white;
 }

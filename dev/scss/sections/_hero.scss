@@ -1,6 +1,7 @@
 #hero {
     height: 90vh;
     width: 100%;
+    background-color: black;
 
     @include xl {
         display: grid;
@@ -11,8 +12,13 @@
     >div {
 
         overflow: hidden !important;
-        border: 105px solid black;
+        border-top: 100px solid black;
+        border-left: 100px solid black;
+        border-right: 100px solid black;
+        border-bottom: 200px solid black;
+        
         height: 100%;
+        padding-top: 200px;
 
         @include xl {
             grid-area: hero;
@@ -25,15 +31,18 @@
             background-position: center;
             background-size: cover;
             display: flex;
-            height: 100%;
+            height: 80%;
             justify-content: center;
+
+                   
+           
 
 
             section {
                 color: $white;
                 text-align: center;
 
-                h1 {
+                /*h1 {
                     font-size: rem-calc(80);
                     font-weight: 900;
                     line-height: 117px;
@@ -46,25 +55,25 @@
                     @include lg {
                         font-size: rem-calc(100);
                     }
-                }
+                }*/
 
-                h2 {
-                    font-size: rem-calc(30);
-                    font-weight: 400;
-                    line-height: 47px;
-                    margin-top: -25px;
-                    text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+                h1 {
+                    font-family: Lato;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 50px;
+                    line-height: 40px;
 
                     @include md {
-                        font-size: rem-calc(40);
-                        margin-top: -20px;
+                        font-size: 50px;
                     }
 
                     @include lg {
-                        font-size: rem-calc(50);
-                        margin-top: -15px;
+                        font-size: 60px;
                     }
                 }
+
+
             }
         }
 

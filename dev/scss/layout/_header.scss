@@ -1,23 +1,41 @@
 /* =============
     Header
 ============= */
-header{
-    padding-top: 120px;
-    padding-bottom: 105px;
-    position: fixed;
-    border: 125px solid black;
+header {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    border: 40px solid black;
     width: 100%;
-    background-color: black; 
+    background-color: black;
     z-index: 1000;
-    >div{
-        display: grid;
-        grid-template-columns: 15% auto;
-        padding: 8px 16px;
 
-        aside{
-            a{
+    /*position: fixed;*/
+
+    >div {
+        /*display: grid;
+        grid-template-columns: 10% auto;
+        padding: 10px 16px; */
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 120px;
+        padding-left: 40px;
+
+
+
+        aside {
+            a {
                 display: inline-block;
             }
+        }
+
+        ul {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 26px;
         }
     }
 
