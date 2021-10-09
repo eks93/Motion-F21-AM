@@ -489,7 +489,21 @@ header > div ul {
   #hero {
     display: grid;
     grid-template-areas: ". hero .";
-    grid-template-columns: auto 1440px auto;
+    grid-template-columns: auto 100% auto;
+  }
+}
+@media (min-width: 1024px) {
+  #hero {
+    display: grid;
+    grid-template-areas: ". hero .";
+    grid-template-columns: auto 100% auto;
+  }
+}
+@media (min-width: 768px) {
+  #hero {
+    display: grid;
+    grid-template-areas: ". hero .";
+    grid-template-columns: auto 100% auto;
   }
 }
 #hero > div {
@@ -502,6 +516,16 @@ header > div ul {
   padding-top: 200px;
 }
 @media (min-width: 1440px) {
+  #hero > div {
+    grid-area: hero;
+  }
+}
+@media (min-width: 1024px) {
+  #hero > div {
+    grid-area: hero;
+  }
+}
+@media (min-width: 768px) {
   #hero > div {
     grid-area: hero;
   }
@@ -538,17 +562,17 @@ header > div ul {
   font-family: Lato;
   font-style: normal;
   font-weight: 300;
-  font-size: 50px;
+  font-size: 3.125rem;
   line-height: 40px;
 }
 @media (min-width: 768px) {
   #hero > div article section h1 {
-    font-size: 50px;
+    font-size: 3.75rem;
   }
 }
 @media (min-width: 1024px) {
   #hero > div article section h1 {
-    font-size: 60px;
+    font-size: 4.375rem;
   }
 }
 
@@ -590,9 +614,8 @@ header > div ul {
   /*font-size: rem-calc(35);
   margin-bottom: 10px;*/
   font-family: Lato;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 1.125rem;
   line-height: 28px;
   color: white;
   text-align: center;
@@ -603,9 +626,8 @@ header > div ul {
   line-height: rem-calc(30);
   text-align: justify;*/
   font-family: Lato;
-  font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 30px;
   text-align: center;
   color: white;

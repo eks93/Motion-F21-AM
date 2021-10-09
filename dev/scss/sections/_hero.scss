@@ -6,12 +6,25 @@
     @include xl {
         display: grid;
         grid-template-areas: ". hero .";
-        grid-template-columns: auto 1440px auto;
+        grid-template-columns: auto 100% auto;
+    }
+
+    @include lg {
+        display: grid;
+        grid-template-areas: ". hero .";
+        grid-template-columns: auto 100% auto;
+    }
+
+    @include md {
+        display: grid;
+        grid-template-areas: ". hero .";
+        grid-template-columns: auto 100% auto;
     }
 
     >div {
 
         overflow: hidden !important;
+        
         border-top: 100px solid black;
         border-left: 100px solid black;
         border-right: 100px solid black;
@@ -21,6 +34,14 @@
         padding-top: 200px;
 
         @include xl {
+            grid-area: hero;
+        }
+
+        @include lg {
+            grid-area: hero;
+        }
+
+        @include md {
             grid-area: hero;
         }
 
@@ -62,15 +83,16 @@
                     font-family: Lato;
                     font-style: normal;
                     font-weight: 300;
-                    font-size: 50px;
+                    font-size: rem-calc(50);
                     line-height: 40px;
 
                     @include md {
-                        font-size: 50px;
+                        font-size: rem-calc(60);
                     }
 
                     @include lg {
-                        font-size: 60px;
+                        font-size: rem-calc(70);
+
                     }
                 }
 
