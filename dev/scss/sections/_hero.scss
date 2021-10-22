@@ -1,8 +1,8 @@
 #hero {
+    background-color: black;
     height: 90vh;
     width: 100%;
-    background-color: black;
-
+    
     @include xl {
         display: grid;
         grid-template-areas: ". hero .";
@@ -22,7 +22,6 @@
     }
 
     >div {
-
         overflow: hidden !important;
         
         border-top: 100px solid black;
@@ -48,7 +47,6 @@
         article {
 
             align-items: center;
-            background-color: black;
             background-image: url("../img/hero/hero.jpg");
             background-position: center;
             background-size: cover;
@@ -56,7 +54,7 @@
             height: 80%;
             justify-content: center;
 
-                   
+            
            
 
 

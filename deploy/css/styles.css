@@ -448,6 +448,7 @@ nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav 
     Header
 ============= */
 header {
+  background-color: black;
   padding-top: 80px;
   padding-bottom: 50px;
   border: 40px solid black;
@@ -481,9 +482,9 @@ header > div ul {
     Footer
 ============= */
 #hero {
+  background-color: black;
   height: 90vh;
   width: 100%;
-  background-color: black;
 }
 @media (min-width: 1440px) {
   #hero {
@@ -532,7 +533,6 @@ header > div ul {
 }
 #hero > div article {
   align-items: center;
-  background-color: black;
   background-image: url("../img/hero/hero.jpg");
   background-position: center;
   background-size: cover;
@@ -596,7 +596,7 @@ header > div ul {
     padding: 0 20%;
   }
 }
-#content > div h2 {
+#content > div #splittext {
   /*font-size: rem-calc(35);
   margin-bottom: 10px;*/
   font-family: Lato;
