@@ -1,4 +1,8 @@
 import { gsap } from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
+
+gsap.registerPlugin(GSDevTools);
+
 
 //this is a global variable ; aka global constant
 //whatever js file you make, they'll be aware of this constant 
@@ -27,6 +31,9 @@ function fadeInSquare(){
 mainTL.add(fadeInSquare());
 
 
+
+
+GSDevTools.create();
 
 
 
