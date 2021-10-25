@@ -12,7 +12,7 @@
 
     @include lg {
         grid-template-columns: auto 80% auto;
-        padding: 128px 0;
+        padding: 15vh 0;
     }
 
     @include xl {
@@ -21,16 +21,26 @@
 
     >div {
         grid-area: content;
-        margin-top: 150px;
-        margin-bottom: 250px;
+        // margin-top: 150px;
+        // margin-bottom: 250px;
 
         @include lg {
             padding: 0 20%;
         }
 
+        #hiding{
+            
+            // grid-area: hiding;
+            // height: 100vh;
+            // background-color: black;
+            color: $white;
+        }
+
         #splittext{ 
             /*font-size: rem-calc(35);
             margin-bottom: 10px;*/
+
+            // overflow: hidden;
 
             font-family: Lato;
             font-weight: 700;

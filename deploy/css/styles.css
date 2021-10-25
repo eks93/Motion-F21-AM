@@ -369,6 +369,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  background-color: black;
+}
+
 /* =============
     Typography
 ============= */
@@ -449,9 +453,7 @@ nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav 
 ============= */
 header {
   background-color: black;
-  padding-top: 80px;
-  padding-bottom: 50px;
-  border: 40px solid black;
+  padding: 20px;
   width: 100%;
   background-color: black;
   z-index: 1000;
@@ -485,51 +487,11 @@ header > div ul {
   background-color: black;
   height: 90vh;
   width: 100%;
-}
-@media (min-width: 1440px) {
-  #hero {
-    display: grid;
-    grid-template-areas: ". hero .";
-    grid-template-columns: auto 100% auto;
-  }
-}
-@media (min-width: 1024px) {
-  #hero {
-    display: grid;
-    grid-template-areas: ". hero .";
-    grid-template-columns: auto 100% auto;
-  }
-}
-@media (min-width: 768px) {
-  #hero {
-    display: grid;
-    grid-template-areas: ". hero .";
-    grid-template-columns: auto 100% auto;
-  }
+  padding-top: 130px;
 }
 #hero > div {
   overflow: hidden !important;
-  border-top: 100px solid black;
-  border-left: 100px solid black;
-  border-right: 100px solid black;
-  border-bottom: 200px solid black;
   height: 100%;
-  padding-top: 200px;
-}
-@media (min-width: 1440px) {
-  #hero > div {
-    grid-area: hero;
-  }
-}
-@media (min-width: 1024px) {
-  #hero > div {
-    grid-area: hero;
-  }
-}
-@media (min-width: 768px) {
-  #hero > div {
-    grid-area: hero;
-  }
 }
 #hero > div article {
   align-items: center;
@@ -578,7 +540,7 @@ header > div ul {
 @media (min-width: 1024px) {
   #content {
     grid-template-columns: auto 80% auto;
-    padding: 128px 0;
+    padding: 15vh 0;
   }
 }
 @media (min-width: 1440px) {
@@ -588,13 +550,14 @@ header > div ul {
 }
 #content > div {
   grid-area: content;
-  margin-top: 150px;
-  margin-bottom: 250px;
 }
 @media (min-width: 1024px) {
   #content > div {
     padding: 0 20%;
   }
+}
+#content > div #hiding {
+  color: #fff;
 }
 #content > div #splittext {
   /*font-size: rem-calc(35);

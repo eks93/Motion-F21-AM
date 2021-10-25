@@ -2,46 +2,36 @@
     background-color: black;
     height: 90vh;
     width: 100%;
+    padding-top: 130px;
     
-    @include xl {
-        display: grid;
-        grid-template-areas: ". hero .";
-        grid-template-columns: auto 100% auto;
-    }
 
-    @include lg {
-        display: grid;
-        grid-template-areas: ". hero .";
-        grid-template-columns: auto 100% auto;
-    }
 
     @include md {
-        display: grid;
-        grid-template-areas: ". hero .";
-        grid-template-columns: auto 100% auto;
+        // display: grid;
+        // grid-template-areas: ". hero .";
+        // grid-template-columns: auto 100% auto;
     }
+
+    //@include lg {
+    //     grid-template-columns: auto 100% auto;
+    // }
+
+
+    // @include xl {
+    //     grid-template-columns: auto 100% auto;
+    // }
+
 
     >div {
         overflow: hidden !important;
         
-        border-top: 100px solid black;
-        border-left: 100px solid black;
-        border-right: 100px solid black;
-        border-bottom: 200px solid black;
+        // border-top: 100px solid black;
+
         
         height: 100%;
-        padding-top: 200px;
-
-        @include xl {
-            grid-area: hero;
-        }
-
-        @include lg {
-            grid-area: hero;
-        }
-
+    
         @include md {
-            grid-area: hero;
+            // grid-area: hero;
         }
 
         article {

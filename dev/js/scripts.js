@@ -20,10 +20,10 @@ const mainTL = gsap.timeline();
 // .from("#title", {duration:2, blur:8, ease: "none"});
 
 
-mainTL.from("#hero", {duration: 2, alpha:0, y:"+=1000"})
-    .from("title", {duration:0.25, alpha:0, blur:10})
-    .to("#title", {duration:4, scale:1.5})
-    ;
+mainTL.from("#hero article", {duration: 2, alpha:0, y:"+=1000"})
+    .from("#title", {duration:0.25, alpha:0, blur:10, scale:1.5})
+    .to("#title", {duration:1, scale:1})
+    .from("splittext", {duration:1, y:"+=20", stagger:0.5});
 
 
 
