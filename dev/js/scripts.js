@@ -14,6 +14,50 @@ const mainTL = gsap.timeline();
 //constants within fuctions are local and only available/accesible within their specific functions
 
 
+function cubeRotation(){
+  const tl = gsap.timeline();
+  tl.to();
+  return tl;
+}
+
+
+function uniteCubes(){
+  const tl = gsap.timeline();
+  tl.to();
+  return tl;
+}
+
+
+function rotateShape(){
+  const tl = gsap.timeline();
+  tl.to();
+  return tl;
+}
+
+
+function growShape(){
+  const tl = gsap.timeline();
+  tl.fromTo("#4", {x:154.82, y:508.29, opactiy:0}, {x:114.32, y:578.44, opacity:1, duration:0.25});
+  tl.fromTo("#5", {x:114.32, y:578.44, opacity:0}, {x:77.21, y:643.39, opacity:1,duration:0.25});
+            ("#16", {x:84.64, y:432.47, opacity:0}, {x:69.21, y:362.39, opacity:0, duration:0.25});
+  tl.fromTo("#9", {x:77.21, y:643.39, opacity:0}, {x:40.21, y:708.39, opacity:1, duration:0.25});
+  tl.fromTo("#10", {x:40.21, y:708.39, opacity:0}, {x:126.21, y:708.39, opacity:1, duration:0.25});
+            ("#17", {x:69.21, y:362.39, opactiy:0}, {x:26.21, y:288.39, opacity:1, duration:0.25});
+            ("#18", {x:26.21, y:288.39, opacity:0}, {x:113.21, y:288.71, opacity:1, duration:0.25});
+            ("#6", {x:241.62, y:508.97, opacity:0}, {x:328.21, y:508.97, opaacity:1, duration:0.25});
+  tl.fromTo("#13", {x:126.21, y:708.39, opacity:0}, {x:211.21, y:708.39, opacity:1, duration:0.25});
+  tl.fromTo("#12", {x:211.21, y:708.39, opacity:0}, {x:253.21, y:636.39, opacity:1, duration:0.25});
+          ("#19", {x:113.21, y:288.71, opacity:0}, {x:200.01, y:289.39, opacity:1, duration:0.25});
+          ("#7", {x:328.21, y:508.97, opacity:0}, {x:413.21, y:508.97, opacity:1, duration:0.25});
+          ("#20", {x:200.01, y:289.39, opacity:0}, {x:286, y:289.39, opacity:1, duration:0.25});
+          ("#8", {x:413.21, y:508.97, opacity:0}, {x:499.81, y:508.97, opacity:1, duration:0.25});
+          ("#21", {x:499.81, y:508.97, opacity:0}, {x:456.21, y:434.39, opacity:1, duration:0.25});
+  tl.fromTo("#11", {x:253.21, y:636.39, opacity:0}, {x:286.21, y:577.39, opacity:1, duration:0.25});
+          ("#22", {x:286.21, y:577.39, opacity:0}, {x:371.61, y:289.39, opacity:1, duration:0.25});
+  return tl;
+}
+
+
 function flyInSquare(){
   const tl = gsap.timeline();
   tl.fromTo("#14", {x:1500, y:640}, {x:338, y:640, duration:0.25});
@@ -21,15 +65,12 @@ function flyInSquare(){
   return tl;
 }
 
-function growShape(){
-  const tl = gsap.timeline();
-  tl.fromTo("#4", {x:154.82, y:508.29, opactiy:0}, {x:114.32, y:578.44, opacity:1, duration:0.25});
-  tl.fromTo("#5", {x:114.32, y:578.44, opacity:0}, {x:77.21, y:643.39, opacity:1,duration:0.25});
-  tl.fromTo("#9", {x:77.21, y:643.39, opacity:0}, {x:40.21, y:708.39, opacity:1, duration:0.25});
 
+function rotateLogo(){
+  const tl = gsap.timeline();
+  tl.to()
   return tl;
 }
-
 
 
 //add functions to main tl chronologically and after the last one include ";"
@@ -38,8 +79,12 @@ function growShape(){
 // after purple brackets, put: "same" within the yellow one on BOTH elements
 
 
-mainTL.add(growShape())
-      .add(flyInSquare());
+mainTL.add(cubeRotation())
+      .add(uniteCubes())
+      .add(rotateShape())
+      .add(growShape())
+      .add(flyInSquare())
+      .add(rotateLogo());
 
 
 
