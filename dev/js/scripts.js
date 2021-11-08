@@ -4,23 +4,31 @@ import { GSDevTools } from "gsap/GSDevTools";
 gsap.registerPlugin(GSDevTools);
 
 
-//this is a global variable ; aka global constant
-//whatever js file you make, they'll be aware of this constant 
 const mainTL = gsap.timeline();
 
 
-//mainTL.from("#right-square",{duration:1, alpha:0});
+
 
 
 //always include return tl; , and the constant line of code, you can make up names for functions
 //constants within fuctions are local and only available/accesible within their specific functions
 
-function fadeInSquare(){
-    const tl = gsap.timeline();
-    tl.from("#right-square",{duration:1, alpha:0});
-    return tl;
+
+function flyInSquare(){
+  const tl = gsap.timeline();
+  tl.fromTo("#14", {x:1500, y:640}, {x:338, y:640, duration:0.25});
+  tl.fromTo("#15", {x:1500, y:711},{x:384, y:711, duration:0.25});
+  return tl;
 }
 
+function growShape(){
+  const tl = gsap.timeline();
+  tl.fromTo("#4", {x:154.82, y:508.29, opactiy:0}, {x:114.32, y:578.44, opacity:1, duration:0.25});
+  tl.fromTo("#5", {x:114.32, y:578.44, opacity:0}, {x:77.21, y:643.39, opacity:1,duration:0.25});
+  tl.fromTo("#9", {x:77.21, y:643.39, opacity:0}, {x:40.21, y:708.39, opacity:1, duration:0.25});
+
+  return tl;
+}
 
 
 
@@ -28,7 +36,12 @@ function fadeInSquare(){
 //this is the parent of the functions and dictates which happens first
 //if you want 2 things to happen at the same time:
 // after purple brackets, put: "same" within the yellow one on BOTH elements
-mainTL.add(fadeInSquare());
+
+
+mainTL.add(growShape())
+      .add(flyInSquare());
+
+
 
 
 
