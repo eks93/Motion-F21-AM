@@ -1,7 +1,7 @@
 #preloader{
 
     display: grid;
-    grid-template-columns: auto 90vw auto;
+    grid-template-columns: auto 100vw auto;
     grid-template-areas: ". preloader .";
     position: absolute;
     height: 100vh;

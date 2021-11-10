@@ -1,12 +1,64 @@
 import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
-
-gsap.registerPlugin(GSDevTools);
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
 
 
 const mainTL = gsap.timeline();
 
 
+function moveSquares(){
+  const tl = gsap.timeline();
+
+  tl.from("#left-square",{duration: 1, x:"-=600"},"makeShape")
+  .from("#right-square",{duration: 1, x:"+=1200"},"makeShape")
+  .from("#top-square",{duration: 1, y:"-=600"},"makeShape")
+  .from("#bottom-square",{duration: 1, y:"+=600"},"makeShape");
+
+  return tl;
+}
+
+
+function expand(){
+  const tl = gsap.timeline();
+
+  tl.to("#start-one", {duration: 0.25, morphSVG:"#end-one"}, "move")
+  .to("#start-two", {duration: 0.25, morphSVG:"end-two"}, "move-two")
+  .to("#start-start-two", {duration: 0.25, morphSVG:"end-end-two"}, "move-two")
+  .to("#start-three", {duration: 0.25, morphSVG:"end-three"}, "move-three")
+  .to("#start-start-three", {duration: 0.25, morphSVG:"end-end-three"}, "move-three")
+  .to("#start-four", {duration: 0.25, morphSVG:"end-four"}, "move-four")
+  .to("#start-five", {duration:0.25, morphSVG:"end-five"}, "move-five")
+  .to("#start-start-five", {duration: 0.25, morphSVG:"end-end-five"}, "move-five")
+  .to("#start-six", {duration:0.25, morphSVG:"end-six"}, "move-six")
+  .to("#start-start-six", {duration: 0.25, morphSVG:"end-end-six"}, "move-six");
+
+  return tl;
+}
+
+
+function flyIn(){
+  const tl = gsap.timeline();
+  tl.from("fly-in-sq", {duration: 1, x:"+=1000"}, "fly")
+  .from("fly-in-sq-two", {duration: 1, x:"+=1000"}, "fly");
+
+  return tl;
+}
+
+
+function rotateShape(){
+   const tl = gsap.timeline();
+    tl.from("logo", {duration: 0.5, rotation: "60_ccw"});
+
+   return tl;
+ }
+
+
+
+mainTL.add(moveSquares())
+.add(expand())
+.add(flyIn())
+.add(rotateShape());
 
 
 
@@ -14,77 +66,19 @@ const mainTL = gsap.timeline();
 //constants within fuctions are local and only available/accesible within their specific functions
 
 
-function cubeRotation(){
-  const tl = gsap.timeline();
-  //tl.to();
-  return tl;
-}
+
+// //add functions to main tl chronologically and after the last one include ";"
+// //this is the parent of the functions and dictates which happens first
+// //if you want 2 things to happen at the same time:
+// // after purple brackets, put: "same" within the yellow one on BOTH elements
 
 
-function uniteCubes(){
-  const tl = gsap.timeline();
-  //tl.to();
-  return tl;
-}
-
-
-function rotateShape(){
-  const tl = gsap.timeline();
-  //tl.to();
-  return tl;
-}
-
-
-function growShape(){
-  const tl = gsap.timeline();
-  tl.fromTo("#four", {x:154.82, y:508.29, opactiy:0}, {x:114.32, y:578.44, opacity:1, duration:0.25})
-  .fromTo("#five", {x:114.32, y:578.44, opacity:0}, {x:77.21, y:643.39, opacity:1,duration:0.25})
-  .fromTo("#sixteen", {x:84.64, y:432.47, opacity:0}, {x:69.21, y:362.39, opacity:0, duration:0.25})
-  .fromTo("#nine", {x:77.21, y:643.39, opacity:0}, {x:40.21, y:708.39, opacity:1, duration:0.25})
-  .fromTo("#ten", {x:40.21, y:708.39, opacity:0}, {x:126.21, y:708.39, opacity:1, duration:0.25})
-  .fromTo("#seventeen", {x:69.21, y:362.39, opactiy:0}, {x:26.21, y:288.39, opacity:1, duration:0.25})
-  .fromTo("#eighteen", {x:26.21, y:288.39, opacity:0}, {x:113.21, y:288.71, opacity:1, duration:0.25})
-  .fromTo("#six", {x:241.62, y:508.97, opacity:0}, {x:328.21, y:508.97, opaacity:1, duration:0.25})
-  .fromTo("#thirteen", {x:126.21, y:708.39, opacity:0}, {x:211.21, y:708.39, opacity:1, duration:0.25})
-  .fromTo("#twelve", {x:211.21, y:708.39, opacity:0}, {x:253.21, y:636.39, opacity:1, duration:0.25})
-  .fromTo("#nineteen", {x:113.21, y:288.71, opacity:0}, {x:200.01, y:289.39, opacity:1, duration:0.25})
-  .fromTo("#seven", {x:328.21, y:508.97, opacity:0}, {x:413.21, y:508.97, opacity:1, duration:0.25})
-  .fromTo("#twenty", {x:200.01, y:289.39, opacity:0}, {x:286, y:289.39, opacity:1, duration:0.25})
-  .fromTo("#eight", {x:413.21, y:508.97, opacity:0}, {x:499.81, y:508.97, opacity:1, duration:0.25})
-  .fromTo("#twentyone", {x:499.81, y:508.97, opacity:0}, {x:456.21, y:434.39, opacity:1, duration:0.25})
-  .fromTo("#eleven", {x:253.21, y:636.39, opacity:0}, {x:286.21, y:577.39, opacity:1, duration:0.25})
-  .fromTo("#twentytwo", {x:286.21, y:577.39, opacity:0}, {x:371.61, y:289.39, opacity:1, duration:0.25});
-  return tl;
-}
-
-
-function flyInSquare(){
-  const tl = gsap.timeline();
-  tl.fromTo("#fourteen", {x:1500, y:640}, {x:338, y:640, duration:0.25});
-  tl.fromTo("#fifteen", {x:1500, y:711},{x:384, y:711, duration:0.25});
-  return tl;
-}
-
-
-function rotateLogo(){
-  const tl = gsap.timeline();
-  tl.to()
-  return tl;
-}
-
-
-//add functions to main tl chronologically and after the last one include ";"
-//this is the parent of the functions and dictates which happens first
-//if you want 2 things to happen at the same time:
-// after purple brackets, put: "same" within the yellow one on BOTH elements
-
-
-mainTL.add(cubeRotation())
-      .add(uniteCubes())
-      .add(rotateShape())
-      .add(growShape())
-      .add(flyInSquare())
-      .add(rotateLogo());
+// // mainTL.add(cubeRotation())
+// //       .add(uniteCubes())
+// //       .add(rotateShape())
+//       mainTL.add(growShape());
+//       // .add(flyInSquare())
+//       // .add(rotateLogo());
 
 
 
@@ -92,31 +86,6 @@ mainTL.add(cubeRotation())
 
 
 GSDevTools.create();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

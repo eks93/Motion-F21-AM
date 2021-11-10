@@ -353,7 +353,7 @@ template {
     Base
 ============= */
 .gs-dev-tools {
-  z-index: 7000;
+  z-index: 70000;
 }
 
 figure {
@@ -375,6 +375,10 @@ a {
 
 body {
   background-color: black;
+}
+
+.hide {
+  display: none;
 }
 
 /* =============
@@ -489,7 +493,7 @@ header > div ul {
 ============= */
 #preloader {
   display: grid;
-  grid-template-columns: auto 90vw auto;
+  grid-template-columns: auto 100vw auto;
   grid-template-areas: ". preloader .";
   position: absolute;
   height: 100vh;

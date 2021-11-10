@@ -3,7 +3,7 @@
 ============= */
 
 .gs-dev-tools{
-    z-index: 7000;
+    z-index: 70000;
 }
 
 figure {
@@ -26,4 +26,9 @@ a{
 
 body{
     background-color: black;
+}
+
+
+.hide{
+    display:none;
 }
