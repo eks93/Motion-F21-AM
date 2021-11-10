@@ -22,15 +22,24 @@ function moveSquares(){
 function expand(){
   const tl = gsap.timeline();
 
-  tl.to("#start-one", {duration: 0.25, morphSVG:"#end-one"}, "move")
-  .to("#start-two", {duration: 0.25, morphSVG:"end-two"}, "move-two")
-  .to("#start-start-two", {duration: 0.25, morphSVG:"end-end-two"}, "move-two")
+  tl.to("#start-one", {duration: 0.2, morphSVG:"#end-one"}, "move")
+  .from("#start-two", {alpha: 0, duration: 0.25}, {alpha: 1})
+  .to("#start-two", {duration: 0.2, morphSVG:"end-two"})
+  .from("#start-start-two", {alpha: 0, duration: 0.25}, {alpha: 1})
+  .to("#start-start-two", {duration: 0.2, morphSVG:"end-end-two"})
+  .from("#start-three", {alpha: 0, duration: 0.25}, {alpha: 1})
   .to("#start-three", {duration: 0.25, morphSVG:"end-three"}, "move-three")
+  .from("#start-start-three", {alpha: 0, duration: 0.25}, {alpha: 1})
   .to("#start-start-three", {duration: 0.25, morphSVG:"end-end-three"}, "move-three")
+  .from("#start-four", {alpha: 0, duration: 0.25}, {alpha: 1})
   .to("#start-four", {duration: 0.25, morphSVG:"end-four"}, "move-four")
+  .from("#start-five", {alpha: 0, duration: 0.25}, {alpha: 1})
   .to("#start-five", {duration:0.25, morphSVG:"end-five"}, "move-five")
+  .from("#start-start-five", {alpha: 0, duration: 0.25}, {alpha: 1})
   .to("#start-start-five", {duration: 0.25, morphSVG:"end-end-five"}, "move-five")
+  .from("#start-six", {alpha: 0, duration: 0.25}, {alpha: 1})
   .to("#start-six", {duration:0.25, morphSVG:"end-six"}, "move-six")
+  .from("#start-start-six", {alpha: 0, duration: 0.25}, {alpha: 1})
   .to("#start-start-six", {duration: 0.25, morphSVG:"end-end-six"}, "move-six");
 
   return tl;
