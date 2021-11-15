@@ -1,9 +1,9 @@
 import { gsap } from "gsap";
-import { GSDevTools } from "gsap/GSDevTools";
+// import { GSDevTools } from "gsap/GSDevTools";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
+gsap.registerPlugin(MorphSVGPlugin);
 
-
+// gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
 
 const mainTL = gsap.timeline();
 
@@ -111,7 +111,7 @@ mainTL.add(moveSquares())
 .add(moveDown());
 
 
-GSDevTools.create();
+// GSDevTools.create();
 
 
 
