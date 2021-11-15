@@ -4,6 +4,7 @@ import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 gsap.registerPlugin(GSDevTools, MorphSVGPlugin);
 
 
+
 const mainTL = gsap.timeline();
 
 
@@ -91,7 +92,7 @@ function rotateShape(){
 
 function moveDown(){
   const tl = gsap.timeline();
-  tl.to("#logo", {duration: 0.5, ease:"power1.inOut", y:"+=300"})
+  tl.to("#logo", {duration: 0.5, ease:"power1.inOut", y:"+=250", x:"-=500", scale:0.25 })
   return tl;
 }
 
@@ -110,24 +111,6 @@ mainTL.add(moveSquares())
 .add(moveDown());
 
 
-
-//always include return tl; , and the constant line of code, you can make up names for functions
-//constants within fuctions are local and only available/accesible within their specific functions
-
-
-
-// //add functions to main tl chronologically and after the last one include ";"
-// //this is the parent of the functions and dictates which happens first
-// //if you want 2 things to happen at the same time:
-// // after purple brackets, put: "same" within the yellow one on BOTH elements
-
-
-
-
-
-
-
-
 GSDevTools.create();
 
 
@@ -136,17 +119,8 @@ GSDevTools.create();
 
 
 
-
-
-
-
-
-
-// use this too
+// landing page code
 // const mainTL = gsap.timeline();
-
-
-
 
 
 //console.log(heroHeight.clientHeight + "px is the height of the hero section");
