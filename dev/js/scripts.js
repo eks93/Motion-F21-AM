@@ -9,65 +9,105 @@ const mainTL = gsap.timeline();
 
 function moveSquares(){
   const tl = gsap.timeline();
-
   tl.from("#left-square",{duration: 1, x:"-=600"},"makeShape")
   .from("#right-square",{duration: 1, x:"+=1200"},"makeShape")
   .from("#top-square",{duration: 1, y:"-=600"},"makeShape")
   .from("#bottom-square",{duration: 1, y:"+=600"},"makeShape");
-
   return tl;
 }
-
 
 function expand(){
   const tl = gsap.timeline();
-
-  tl.to("#start-one", {duration: 0.2, morphSVG:"#end-one"}, "move")
-  .from("#start-two", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-two", {duration: 0.2, morphSVG:"end-two"})
-  .from("#start-start-two", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-start-two", {duration: 0.2, morphSVG:"end-end-two"})
-  .from("#start-three", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-three", {duration: 0.25, morphSVG:"end-three"}, "move-three")
-  .from("#start-start-three", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-start-three", {duration: 0.25, morphSVG:"end-end-three"}, "move-three")
-  .from("#start-four", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-four", {duration: 0.25, morphSVG:"end-four"}, "move-four")
-  .from("#start-five", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-five", {duration:0.25, morphSVG:"end-five"}, "move-five")
-  .from("#start-start-five", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-start-five", {duration: 0.25, morphSVG:"end-end-five"}, "move-five")
-  .from("#start-six", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-six", {duration:0.25, morphSVG:"end-six"}, "move-six")
-  .from("#start-start-six", {alpha: 0, duration: 0.25}, {alpha: 1})
-  .to("#start-start-six", {duration: 0.25, morphSVG:"end-end-six"}, "move-six");
-
+  tl.from("#start-one", {autoAlpha: 0, duration: 0.2}, {alpha: 1})
+  .to("#start-one", {duration: 0.5, ease:"slow", morphSVG:"#end-one"}, "move")
   return tl;
 }
 
+function expandTwo (){
+  const tl = gsap.timeline();
+  tl.from("#start-two", {autoAlpha: 0, duration: 0.2}, {alpha: 1})
+  .to("#start-two", {duration: 0.5, ease:"slow", morphSVG:"#end-two"});
+  return tl;
+}
+
+function expandTwoAgain (){
+  const tl = gsap.timeline();
+  tl.from("#start-start-two", {autoAlpha: 0, duration: 0.2}, {alpha: 1})
+  .to("#start-start-two", {duration: 0.5, ease:"slow", morphSVG:"#end-end-two"});
+  return tl;
+}
+
+function expandThree (){
+  const tl = gsap.timeline();
+  tl.from("#start-three", {autoAlpha: 0, duration: 0.2}, {alpha: 1})
+  .to("#start-three", {duration: 0.5, morphSVG:"#end-three"}, "move-three")
+  .from("#start-start-three", {autoAlpha: 0, duration: 0.2}, {alpha: 1})
+  .to("#start-start-three", {duration: 0.5, morphSVG:"#end-end-three"}, "move-three");
+  return tl;
+}
+
+function expandFour (){
+  const tl = gsap.timeline();
+  tl.from("#start-four", {autoAlpha: 0, duration: 0.2}, {alpha: 1})
+  .to("#start-four", {duration: 0.75, morphSVG:"#end-four"});
+  return tl;
+}
+
+function expandFive (){
+  const tl = gsap.timeline();
+  tl.from("#start-five", {autoAlpha: 0, duration: 0.25}, {alpha: 1})
+  .to("#start-five", {duration:0.25, morphSVG:"#end-five"}, "move-five")
+  .from("#start-start-five", {autoAlpha: 0, duration: 0.25}, {alpha: 1})
+  .to("#start-start-five", {duration: 0.25, morphSVG:"#end-end-five"}, "move-five")
+  return tl;
+}
+
+function expandSix (){
+  const tl = gsap.timeline();
+  tl.from("#start-six", {autoAlpha: 0, duration: 0.25}, {alpha: 1})
+  .to("#start-six", {duration:0.25, morphSVG:"#end-six"}, "move-six")
+  .from("#start-start-six", {autoAlpha: 0, duration: 0.25}, {alpha: 1})
+  .to("#start-start-six", {duration: 0.25, morphSVG:"#end-end-six"}, "move-six");
+  return tl;
+}
 
 function flyIn(){
   const tl = gsap.timeline();
-  tl.from("fly-in-sq", {duration: 1, x:"+=1000"}, "fly")
-  .from("fly-in-sq-two", {duration: 1, x:"+=1000"}, "fly");
-
+  tl.from("#fly-in-sq", {duration: 0.75, x:"+=1000"}, "fly");
   return tl;
 }
 
+function flyInTwo(){
+  const tl = gsap.timeline();
+  tl.from("#fly-in-sq-two", {duration: 0.75, x:"+=1000"}, "fly");
+  return tl;
+}
 
 function rotateShape(){
    const tl = gsap.timeline();
-    tl.from("logo", {duration: 0.5, rotation: "60_ccw"});
-
+    tl.to("#logo", {duration: 0.5, rotation: "90_ccw", transformOrigin: "50% 50%"});
    return tl;
  }
 
+function moveDown(){
+  const tl = gsap.timeline();
+  tl.to("#logo", {duration: 0.5, ease:"power1.inOut", y:"+=300"})
+  return tl;
+}
 
 
 mainTL.add(moveSquares())
 .add(expand())
-.add(flyIn())
-.add(rotateShape());
+.add(expandTwo(), "same")
+.add(expandTwoAgain(), "same")
+.add(expandThree(), "sameThree")
+.add(expandFour(), "sameThree")
+.add(expandFive())
+.add(expandSix(), "sameTwo")
+.add(flyIn(), "sameTwo")
+.add(flyInTwo())
+.add(rotateShape())
+.add(moveDown());
 
 
 
@@ -82,12 +122,6 @@ mainTL.add(moveSquares())
 // // after purple brackets, put: "same" within the yellow one on BOTH elements
 
 
-// // mainTL.add(cubeRotation())
-// //       .add(uniteCubes())
-// //       .add(rotateShape())
-//       mainTL.add(growShape());
-//       // .add(flyInSquare())
-//       // .add(rotateLogo());
 
 
 
