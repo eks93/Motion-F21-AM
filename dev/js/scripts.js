@@ -1,15 +1,12 @@
 import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
-// import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(GSDevTools, DrawSVGPlugin, SplitText);
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+gsap.registerPlugin(GSDevTools, DrawSVGPlugin,  MotionPathPlugin);
 
 
 
 const mainTL = gsap.timeline();
-
-
 
 
 function drawShape(){
@@ -20,10 +17,17 @@ function drawShape(){
 
 function rainbowDraw(){
   const tl = gsap.timeline();
-  tl.from("#orange", {duration: 1, drawSVG: "0%"})
-  .from("#pink", {duration: 1, drawSVG: "0%", stagger:0.5})
-  .from("#purple", {duration: 1, drawSVG: "0%", stagger:0.5})
-  .from("#blue", {duration: 1, drawSVG: "0%", stagger:0.5})
+  tl.from("#orange", {duration: 1.5, drawSVG: "0%"})
+  .from("#pink", {duration: 1.5, drawSVG: "0%", stagger:0.25})
+  .from("#purple", {duration: 1.5, drawSVG: "0%", stagger:0.75})
+  .from("#blue", {duration: 1.5, drawSVG: "0%", stagger:0.75});
+  return tl;
+}
+
+function rainbowBlockAppear(){
+  const tl = gsap.timeline();
+  tl.from("#blue-line", {autoAlpha:0, duration: 0.2}, {alpha:1})
+  .from("#line", {autoAlpha:0, duration: 0.2}, {alpha:1});
   return tl;
 }
 
@@ -41,6 +45,13 @@ function nameDrop(){
   return tl;
 }
 
+function blockMove(){
+  const tl = gsap.timeline();
+  tl.to("#line", {duration: 1, motionPath:{path:"#white-line", align:"white-line", ease: "bounce.in"}})
+  .from("#new-rainbow", {duration: 2, x:"+=800", ease: "bounce.out", stagger: 0.5})
+  return tl;
+}
+
 function fadeInLine(){
   const tl = gsap.timeline();
   tl.from("#slogan", {duration: 2 })
@@ -53,7 +64,9 @@ function fadeInLine(){
 
 mainTL.add(drawShape())
 .add(rainbowDraw())
+.add(rainbowBlockAppear())
 .add(nameDrop())
+.add(blockMove())
 .add(fadeInLine());
 
 
