@@ -1,13 +1,10 @@
-#preloader{
+#logo{
 
-    // display: grid;
-    // grid-template-columns: auto 100vw auto;
-    // grid-template-areas: ". preloader .";
+  
     position: absolute;
     height: 100vh;
     width: 100%;
     z-index: 5000;
-    background-color: $tan;
 
 
     @include md{
@@ -26,14 +23,16 @@
 
     >div{
 
-        grid-area: preloader;
-        height: 100%;
+        grid-area: logo;
+        height: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
 
         svg{
-            width: 100%;
+            width: 80%;
         }
     }
+
+
 }

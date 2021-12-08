@@ -373,10 +373,6 @@ a {
   text-decoration: none;
 }
 
-body {
-  background-color: black;
-}
-
 .hide {
   display: none;
 }
@@ -420,205 +416,40 @@ textarea {
 /* =============
     Navigation
 ============= */
-nav {
-  height: 100%;
-}
-nav .logo:link, nav .logo:visited {
-  display: block;
-  color: white;
-  transition: 0.25s ease 0s;
-}
-nav .logo:link:hover, nav .logo:link:active, nav .logo:visited:hover, nav .logo:visited:active {
-  color: grey;
-}
-nav ul {
-  /*display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;*/
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
-  padding-top: 40px;
-}
-nav ul li {
-  margin-left: 3vw;
-}
-nav ul li a:link, nav ul li a:visited {
-  font-family: "Lato", sans-serif;
-  font-size: 1.375rem;
-  color: white;
-  font-weight: 300;
-  transition: 0.25s ease 0s;
-}
-nav ul li a:link:hover, nav ul li a:link:active, nav ul li a:visited:hover, nav ul li a:visited:active {
-  color: grey;
-}
-
 /* =============
     Header
 ============= */
-header {
-  background-color: black;
-  padding: 20px;
-  width: 100%;
-  background-color: black;
-  z-index: 1000;
-  position: fixed;
-}
-header > div {
-  /*display: grid;
-  grid-template-columns: 10% auto;
-  padding: 10px 16px; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 120px;
-  padding-left: 40px;
-}
-header > div aside a {
-  display: inline-block;
-}
-header > div ul {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 26px;
-}
-
 /* =============
     Footer
 ============= */
-#preloader {
+#logo {
   position: absolute;
   height: 100vh;
   width: 100%;
   z-index: 5000;
-  background-color: #827E73;
 }
 @media (min-width: 768px) {
-  #preloader {
+  #logo {
     grid-template-columns: auto 80vw auto;
   }
 }
 @media (min-width: 1024px) {
-  #preloader {
+  #logo {
     grid-template-columns: auto 70vw auto;
   }
 }
 @media (min-width: 1440px) {
-  #preloader {
+  #logo {
     grid-template-columns: auto 50vw auto;
   }
 }
-#preloader > div {
-  grid-area: preloader;
-  height: 100%;
+#logo > div {
+  grid-area: logo;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#preloader > div svg {
-  width: 100%;
-}
-
-#hero {
-  background-color: black;
-  height: 90vh;
-  width: 100%;
-  padding-top: 130px;
-}
-#hero > div {
-  overflow: hidden !important;
-  height: 100%;
-}
-#hero > div article {
-  align-items: center;
-  background-image: url("../img/hero/hero.jpg");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  height: 80%;
-  justify-content: center;
-}
-#hero > div article section {
-  color: #fff;
-  text-align: center;
-}
-#hero > div article section h1 {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 3.125rem;
-  line-height: 40px;
-}
-@media (min-width: 768px) {
-  #hero > div article section h1 {
-    font-size: 3.75rem;
-  }
-}
-@media (min-width: 1024px) {
-  #hero > div article section h1 {
-    font-size: 4.375rem;
-  }
-}
-
-#content {
-  display: grid;
-  grid-template-areas: ". content .";
-  grid-template-columns: auto 90% auto;
-  padding: 64px 0;
-  background-color: black;
-}
-@media (min-width: 768px) {
-  #content {
-    grid-template-columns: auto 80% auto;
-    padding: 100px 0;
-  }
-}
-@media (min-width: 1024px) {
-  #content {
-    grid-template-columns: auto 80% auto;
-    padding: 15vh 0;
-  }
-}
-@media (min-width: 1440px) {
-  #content {
-    grid-template-columns: auto 1440px auto;
-  }
-}
-#content > div {
-  grid-area: content;
-}
-@media (min-width: 1024px) {
-  #content > div {
-    padding: 0 20%;
-  }
-}
-#content > div #hiding {
-  color: #fff;
-}
-#content > div #splittext {
-  /*font-size: rem-calc(35);
-  margin-bottom: 10px;*/
-  font-family: Lato;
-  font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 28px;
-  color: white;
-  text-align: center;
-  margin-bottom: 35px;
-}
-#content > div p {
-  /*font-size: rem-calc(18);
-  line-height: rem-calc(30);
-  text-align: justify;*/
-  font-family: Lato;
-  font-weight: 300;
-  font-size: 1.125rem;
-  line-height: 30px;
-  text-align: center;
-  color: white;
+#logo > div svg {
+  width: 80%;
 }

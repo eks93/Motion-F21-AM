@@ -7,7 +7,7 @@
       "uuidString" : "8BC43299-527C-4C67-882B-DD99F41B2BE6"
     }
   ],
-  "creatorBuild" : "34214",
+  "creatorBuild" : "34264",
   "files" : {
     "\/deploy\/css\/styles.css" : {
       "aP" : 1,
@@ -20,29 +20,6 @@
       "oAP" : "\/deploy\/css\/styles-min.css",
       "oF" : 0,
       "pg" : 0
-    },
-    "\/deploy\/img\/header\/Rick Owens.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/deploy\/img\/header\/Rick Owens.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/deploy\/img\/hero\/hero.jpg" : {
-      "ft" : 16384,
-      "iS" : 118496,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/deploy\/img\/hero\/hero.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
     },
     "\/deploy\/index.html" : {
       "cB" : 0,
@@ -63,38 +40,22 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/design\/Preloader.svg" : {
+    "\/design\/24.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/design\/Preloader.svg",
+      "oAP" : "\/design\/24.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/dev\/content\/content.kit" : {
+    "\/dev\/content\/logo.kit" : {
       "cB" : 0,
       "ft" : 2048,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/dev\/content\/content.html",
-      "oF" : 0
-    },
-    "\/dev\/content\/hero.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/dev\/content\/hero.html",
-      "oF" : 0
-    },
-    "\/dev\/content\/preloader.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/dev\/content\/preloader.html",
+      "oAP" : "\/dev\/content\/logo.html",
       "oF" : 0
     },
     "\/dev\/global\/head.kit" : {
@@ -103,14 +64,6 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/dev\/global\/head.html",
-      "oF" : 0
-    },
-    "\/dev\/global\/header.kit" : {
-      "cB" : 0,
-      "ft" : 2048,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/dev\/global\/header.html",
       "oF" : 0
     },
     "\/dev\/global\/scripts.kit" : {
@@ -290,7 +243,7 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/dev\/scss\/sections\/_content.scss" : {
+    "\/dev\/scss\/sections\/_logo.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
@@ -299,37 +252,7 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/dev\/scss\/sections\/_content.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/dev\/scss\/sections\/_hero.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/dev\/scss\/sections\/_hero.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/dev\/scss\/sections\/_preloader.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/dev\/scss\/sections\/_preloader.css",
+      "oAP" : "\/dev\/scss\/sections\/_logo.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -1572,6 +1495,9 @@
       },
       "no-unused-labels" : {
         "active" : 1
+      },
+      "no-unused-private-class-members" : {
+        "active" : 0
       },
       "no-unused-vars" : {
         "active" : 1,
